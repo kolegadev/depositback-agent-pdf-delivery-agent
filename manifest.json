@@ -1,0 +1,18 @@
+{
+  "workflow_id": "depositback-agent-pdf-delivery-agent-default",
+  "version": "1.0.0",
+  "agent": "pdf-delivery-agent",
+  "created": "2026-05-20T18:05:40.381890",
+  "description": "Default health-check workflow for PDF Delivery Agent",
+  "steps": [
+    {
+      "id": "health_check",
+      "skill": "noop",
+      "params": {
+        "message": "PDF Delivery Agent is operational"
+      }
+    }
+  ],
+  "on_success": "Write result to data/outbox/",
+  "on_failure": "Update state.json with error status"
+}
